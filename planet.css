@@ -1,0 +1,274 @@
+/* code by tedy xsvs */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #000;
+}
+
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 23%;
+    font-family: 'AlphaCentauri', sans-serif;
+    font-size: 40px;
+    color: #fff;
+}
+
+.loader::after{
+    content: '\2026';
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    animation: dots steps(4, end) 2s infinite;
+    width: 0%;
+}
+
+
+@keyframes dots {
+    to {
+        width: 1.25em;
+    }
+}
+
+.landing{
+    background-image: url(bg1.png);
+    height: 100vh;
+    opacity: 0;
+    display: none;
+    transition: opacity 2s ease-in;
+}
+
+.landing::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top, #000, transparent);
+    z-index: 9;
+}
+
+.hero{
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.landing h1{
+    font-family: 'AlphaCentauri', sans-serif;
+    color: #fff;
+    position: absolute;
+    z-index: 3;
+    top: 40%;
+    left: 400px;
+    font-size: 120px;
+    text-align: center;
+}
+
+
+.content{
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    opacity: 0;
+    display: none;
+    transition: opacity 2s ease-in;
+}
+
+.img-mid{
+    z-index: 5;
+}
+
+.img-foreground{
+    z-index: 7;
+}
+
+.content{
+    z-index: 5;
+    position: relative;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.content hr {
+    width: 30%;
+    border: 1px solid #fff;
+    text-align: center;
+    display: inline-block;
+}
+
+.content p{
+    text-align: justify;
+    text-indent: 100px;
+}
+button{
+    border: 2px solid #000; 
+    width: 120px;
+    height: 40px;
+    border-radius: 6px;
+    position: relative;
+    left: 600px;
+    bottom: 100px;
+    z-index: 10;
+    box-shadow: inset 0 0 0 0 rgba(255, 0, 68);
+    transition: ease-out 0.3s;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+button:hover{
+    box-shadow: inset 120px 0 0 0 rgba(255, 0, 68);
+    cursor: pointer;
+    color: #fff;
+}
+
+.footer {
+    padding: 40px 0;
+    background-color: #ffffff;
+    opacity: 0;
+    display: none;
+    transition: opacity 2s ease-in;
+    border-top-left-radius: 120px;
+  }
+  
+  .footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+    color: #4b4c4d;
+  }
+  
+  .footer .social a {
+    font-size: 24px;
+    color: inherit;
+    border: 1px solid #ccc;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    opacity: 0.75;
+  }
+  
+  .footer .social a:hover {
+    opacity: 0.9;
+  }
+  
+  .footer ul {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+  
+  .footer ul a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+  
+  .footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+  }
+  
+  .footer ul a:hover {
+    opacity: 1;
+  }
+  
+  .footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+
+
+@media (max-width: 768px) {
+    .landing h1{
+        font-family: 'AlphaCentauri', sans-serif;
+        color: #fff;
+        position: absolute;
+        z-index: 3;
+        top: 40%;
+        left: 30%;
+        font-size: 90px;
+        text-align: center;
+    }
+
+    
+    button{
+        border: none;
+        width: 120px;
+        height: 40px;
+        border-radius: 4px;
+        position: relative;
+        left: 42%;
+        bottom: 100px;
+        z-index: 10;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .landing h1{
+        font-family: 'AlphaCentauri', sans-serif;
+        color: #fff;
+        position: absolute;
+        z-index: 3;
+        top: 40%;
+        left: 38px;
+        font-size: 90px;
+        text-align: center;
+    }
+    
+    .content p{
+        text-align: justify;
+        text-indent: 15px;
+    }
+    
+
+    button{
+        border: none;
+        width: 120px;
+        height: 40px;
+        border-radius: 4px;
+        position: relative;
+        left: 160px;
+        bottom: 100px;
+        z-index: 10;
+    }
+}
+
+@media (max-width: 360px){
+    button{
+        border: none;
+        width: 120px;
+        height: 40px;
+        border-radius: 4px;
+        position: relative;
+        left: 36%;
+        bottom: 100px;
+        z-index: 10;
+    }
+}
